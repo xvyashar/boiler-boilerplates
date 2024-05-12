@@ -4,11 +4,14 @@
   "description": "Starter project created by boiler",
   "main": "app.js",
   "scripts": {
-    "lint": "eslint \"./**/*.js\" --fix"
+    "lint": "eslint \"./**/*.js\" --fix",
+    "format": "prettier --write \"./**/*.js\""
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^9.2.0",
+    "globals": "^15.2.0",
     "prettier": "^3.2.5"
   },
   "dependencies": {
