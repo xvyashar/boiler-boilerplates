@@ -1,9 +1,9 @@
 const { Router } = require('express');
-const { root } = require('../controllers');
+const { root: controller } = require('../controllers');
 
 // Init Route
 const route = Router();
 
-route.get('/', root.helloworld);
+route.get('/', controller.helloworld);
 
 module.exports = route;

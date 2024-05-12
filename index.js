@@ -2,7 +2,7 @@
 const app = require('express')();
 const { urlencoded, json } = require('express');
 const { config } = require('./utils');
-const { root: rootRoute } = require('./routes');
+const routes = require('./routes');
 const {
   errorHandler: { knownExceptions, unknownExceptions },
 } = require('./middlewares');
@@ -12,11 +12,12 @@ app.use(urlencoded({ extended: false }));
 app.use(json());
 
 // Routes
-app.use(rootRoute);
+for (const route of Object.keys(routes)) {
+  app.use(routes[route]);
+}
 
 // Error Handlers
-app.use(knownExceptions);
-app.use(unknownExceptions);
+app.use(knownExceptions, unknownExceptions);
 
 // Launch
 app.listen(config.get('PORT'), () =>
