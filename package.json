@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "eslint \"./**/*.js\" --fix",
     "format": "prettier --write \"./**/*.js\"",
-    "start": "node app.js",
-    "start:watch": "nodemon app.js"
+    "start": "node index.js",
+    "start:watch": "nodemon index.js"
   },
   "author": "",
   "license": "MIT",
