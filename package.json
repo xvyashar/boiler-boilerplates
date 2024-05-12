@@ -2,7 +2,7 @@
   "name": "boiler-boilerplates",
   "version": "1.0.0",
   "description": "Starter project created by boiler",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "lint": "eslint \"./**/*.js\" --fix",
     "format": "prettier --write \"./**/*.js\"",
