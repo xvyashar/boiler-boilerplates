@@ -1,9 +1,9 @@
 // Imports
-const { Config } = require('./utils');
+const { ConfigService } = require('./utils');
 const App = require('./app');
 
 const app = new App();
-const config = new Config();
+const config = new ConfigService();
 
 // Events
 app.on('launched', ({ port }) =>

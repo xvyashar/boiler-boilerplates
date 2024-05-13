@@ -1,10 +1,16 @@
 const { HTTP_STATUS } = require('../constants');
 
 exports.ErrorHandlerMiddleware = class ErrorHandlerMiddleware {
-  constructor() {}
+  constructor() {
+    // Implement singleton
+    if (!ErrorHandlerMiddleware.instance) {
+      ErrorHandlerMiddleware.instance = this;
+    }
+    return ErrorHandlerMiddleware.instance;
+  }
 
   getKnownExceptionsHandler(err, req, res, next) {
-    // fill this function with your conditions
+    // Fill this function with your conditions
     next(err);
   }
 

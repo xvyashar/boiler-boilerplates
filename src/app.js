@@ -8,13 +8,13 @@ const { ErrorHandlerMiddleware } = require('./middlewares');
 module.exports = class App extends EventEmitter {
   #app;
   constructor() {
-    // implement singleton
+    // Implement singleton
     if (!App.instance) {
       super();
 
       this.#app = express();
 
-      // Base Middlewares
+      // Base middlewares
       this.#app.use(urlencoded({ extended: false }));
       this.#app.use(json());
 
@@ -23,7 +23,7 @@ module.exports = class App extends EventEmitter {
         this.#app.use(routes[route]);
       }
 
-      // Error Handlers
+      // Error handlers
       const errorHandler = new ErrorHandlerMiddleware();
       this.#app.use(errorHandler.getHandlers());
 

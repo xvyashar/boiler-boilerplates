@@ -1,7 +1,13 @@
 const { HTTP_STATUS } = require('../constants');
 
 exports.RootController = class RootController {
-  constructor() {}
+  constructor() {
+    // Implement singleton
+    if (!RootController.instance) {
+      RootController.instance = this;
+    }
+    return RootController.instance;
+  }
 
   helloWorld(_req, res) {
     res
