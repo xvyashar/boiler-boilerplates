@@ -1,9 +1,9 @@
 const { Router } = require('express');
 const service = require('./root.service');
 
-// Init Route
-const route = Router();
+// Init route
+const router = Router();
 
-route.get('/', service.helloworld);
+router.get('/', service.helloWorld);
 
-module.exports = route;
+exports.router = router;

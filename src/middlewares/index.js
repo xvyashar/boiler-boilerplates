@@ -1,3 +1,1 @@
-const errorHandler = require('./error-handler');
-
-module.exports = { errorHandler };
+module.exports = { ...require('./error-handler.middleware') };

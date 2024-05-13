@@ -1,13 +1,11 @@
 // Imports
 const app = require('express')();
 const { urlencoded, json } = require('express');
-const config = require('./config');
+const { getEnv } = require('./config');
 const routes = require('./routes');
-const {
-  errorHandler: { knownExceptions, unknownExceptions },
-} = require('./middlewares');
+const { handlers } = require('./middlewares');
 
-// Base Middlewares
+// Base middlewares
 app.use(urlencoded({ extended: false }));
 app.use(json());
 
@@ -16,10 +14,10 @@ for (const route of Object.keys(routes)) {
   app.use(routes[route]);
 }
 
-// Error Handlers
-app.use(knownExceptions, unknownExceptions);
+// Error handlers
+app.use(handlers);
 
 // Launch
-app.listen(config.get('PORT'), () =>
-  console.log(`App is running at port: ${config.get('PORT')}`),
+app.listen(getEnv('PORT'), () =>
+  console.log(`App is running at port: ${getEnv('PORT')}`),
 );

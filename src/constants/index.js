@@ -1,1 +1,1 @@
-module.exports = { ...require('./http-status') };
+module.exports = { ...require('./http-status.constants') };
