@@ -2,7 +2,7 @@ const { HTTP_STATUS } = require('../constants');
 
 exports.RootService = class RootService {
   constructor() {
-    // Implement Singleton
+    // Implement singleton
     if (!RootService.instance) {
       RootService.instance = this;
     }

@@ -2,7 +2,7 @@ const { config } = require('dotenv');
 
 exports.ConfigService = class ConfigService {
   constructor(path) {
-    // implement singleton
+    // Implement singleton
     if (!ConfigService.instance) {
       config({ path });
 
