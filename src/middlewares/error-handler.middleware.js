@@ -13,4 +13,4 @@ exports.unknownExceptions = (err, _req, res, _next) => {
   });
 };
 
-exports.handlers = [this.knownExceptions, this.unknownExceptions];
+exports.errorHandlers = [this.knownExceptions, this.unknownExceptions];

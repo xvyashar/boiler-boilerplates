@@ -3,7 +3,7 @@ const app = require('express')();
 const { urlencoded, json } = require('express');
 const { getEnv } = require('./config');
 const routes = require('./routes');
-const { handlers } = require('./middlewares');
+const { errorHandlers } = require('./middlewares');
 
 // Base middlewares
 app.use(urlencoded({ extended: false }));
@@ -15,7 +15,7 @@ for (const route of Object.keys(routes)) {
 }
 
 // Error handlers
-app.use(handlers);
+app.use(errorHandlers);
 
 // Launch
 app.listen(getEnv('PORT'), () =>
