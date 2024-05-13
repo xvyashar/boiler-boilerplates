@@ -1,7 +1,7 @@
 const { HTTP_STATUS } = require('../constants');
 
 exports.knownExceptions = (err, req, res, next) => {
-  // fill this function with your conditions
+  // Fill this function with your conditions
   next(err);
 };
 
@@ -12,3 +12,5 @@ exports.unknownExceptions = (err, _req, res, _next) => {
     statusCode: HTTP_STATUS.INTERNAL_SERVER_ERROR,
   });
 };
+
+exports.errorHandlers = [this.knownExceptions, this.unknownExceptions];
